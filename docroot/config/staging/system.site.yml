@@ -1,0 +1,11 @@
+uuid: d5e574d3-f513-4029-970b-11f8acf99818
+name: Site-Install
+mail: admin@example.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
