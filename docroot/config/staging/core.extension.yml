@@ -2,8 +2,10 @@ module:
   block: 0
   breakpoint: 0
   dblog: 0
+  dd_tools: 0
   entity_reference: 0
   field: 0
+  field_ui: 0
   file: 0
   filter: 0
   node: 0
@@ -18,3 +20,4 @@ theme:
   classy: 0
   bartik: 0
   seven: 0
+  shoami: 0

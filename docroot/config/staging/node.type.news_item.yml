@@ -1,0 +1,12 @@
+uuid: dbb33939-4834-4ebc-8561-970ec6d407cc
+langcode: en
+status: true
+dependencies: {  }
+name: 'News item'
+type: news_item
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true
+third_party_settings: {  }
