@@ -11,9 +11,7 @@ docroot/composer.json
 docroot/composer.lock
 docroot/example.gitignore
 docroot/index.php
-docroot/profiles/
 docroot/robots.txt
-docroot/sites/
 docroot/web.config
 
 # Ignore configuration files that may contain sensitive information.
