@@ -1,5 +1,31 @@
 # drupal 8
 docroot/core
+docroot/.csslintrc
+docroot/.editorconfig
+docroot/.eslintignore
+docroot/.eslintrc
+docroot/.gitattributes
+docroot/.htaccess
+docroot/README.txt
+docroot/composer.json
+docroot/composer.lock
+docroot/example.gitignore
+docroot/index.php
+docroot/profiles/
+docroot/robots.txt
+docroot/sites/
+docroot/web.config
+
+# Ignore configuration files that may contain sensitive information.
+docroot/sites/*/settings*.php
+docroot/sites/*/services*.yml
+
+# Ignore paths that contain user-generated content.
+docroot/sites/*/files
+docroot/ sites/*/private
+
+# Ignore SimpleTest multi-site environment.
+sites/simpletest
 
 # Compiled source #
 ###################
