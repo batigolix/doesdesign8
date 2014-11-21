@@ -1,6 +1,6 @@
 uuid: 6b7310e1-52a8-44a8-a900-0f782f5709e5
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - user
@@ -8,7 +8,7 @@ dependencies:
     - seven
 id: seven_login
 theme: seven
-region: content
+region: '-1'
 weight: 0
 provider: null
 plugin: user_login_block

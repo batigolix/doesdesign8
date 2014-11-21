@@ -1,13 +1,16 @@
 module:
   block: 0
+  breakpoint: 0
   dblog: 0
   entity_reference: 0
   field: 0
   file: 0
   filter: 0
   node: 0
+  shortcut: 0
   system: 0
   text: 0
+  toolbar: 0
   update: 0
   user: 0
   minimal: 1000
