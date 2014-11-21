@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\dd_tools\Plugin\Block\Dd_toolsNews .
+ * Contains \Drupal\dd_tools\Plugin\Block\Dd_toolsFlickr .
  */
 
 namespace Drupal\dd_tools\Plugin\Block;
@@ -15,20 +15,20 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides a 'Example: configurable text string' block.
  *
  * @Block(
- *   id = "News",
- *   subject = @Translation("News"),
- *   admin_label = @Translation("DD tools: News")
+ *   id = "flickr",
+ *   subject = @Translation("Flickr"),
+ *   admin_label = @Translation("DD tools: Flickr")
  * )
  */
-class Dd_toolsNews extends BlockBase {
+class Dd_toolsFlickr extends BlockBase {
 
   /**
    * Overrides \Drupal\Core\Block\BlockBase::defaultConfiguration().
    */
   public function defaultConfiguration() {
     return array(
-      'label' => t("News"),
-      'content' => t('Default news content'),
+      'label' => t("Photo's on Flickr"),
+      'content' => t('Default demo content'),
       'cache' => array(
         'max_age' => 3600,
         'contexts' => array(
@@ -50,12 +50,13 @@ class Dd_toolsNews extends BlockBase {
       '#default_value' => $this->configuration['content'],
     );
 
-    $form['news_items'] = array(
-      '#type' => 'select',
-      '#options' => array(2 => 2, 5 => 5, 10 => 10),
-      '#description' => t('This number of items will be shown in the news block'),
-      '#title' => t('Number of items'),
-      '#default_value' => $this->configuration['news_items'],
+
+    $form['flickr_items'] = array(
+        '#type' => 'select',
+        '#title' => t('Number of items'),
+        '#options' => array(10 => 10, 12 => 12, 15 => 15, 16 => 16, 18 => 18, 20 => 20),
+        '#description' => t('This number of items will be shown in the Flickr block'),
+        '#default_value' => $this->configuration['flickr_items'],
     );
 
     return $form;
@@ -73,17 +74,17 @@ class Dd_toolsNews extends BlockBase {
    */
   public function build() {
 
-//  case 'News':
-//      $blocks['subject'] = t('Photo\'s on News');
+//  case 'flickr':
+//      $blocks['subject'] = t('Photo\'s on Flickr');
 //      $blocks['content'] = array(
-//        '#markup' => '<div id="News_images"> </div>',
+//        '#markup' => '<div id="flickr_images"> </div>',
 //        '#attached' => array(
 //          'js' => array(
-//            'data' => drupal_get_path('module', 'dd_tools') . '/js/News.js',
+//            'data' => drupal_get_path('module', 'dd_tools') . '/js/flickr.js',
 //            array(
 //              'data' => array(
 //                'dd_tools' => array(
-//                  'block_items' => variable_get('News_items', 13),
+//                  'block_items' => variable_get('flickr_items', 13),
 //                ),
 //              ),
 //              'type' => 'setting',
@@ -93,10 +94,10 @@ class Dd_toolsNews extends BlockBase {
 //      );
 
     $build = array();
-    $build['container']['#markup'] = '<div id="News_images"> </div>';
+    $build['container']['#markup'] = '<div id="flickr_images"> </div>';
 //    $test = \Drupal::config('nognix.settings')->get('doh_you');
 //    $build['stuff2']['#markup'] = $this->configuration['content'];
-//    $build['#attached']['library'][] = 'dd_tools/News';
+//    $build['#attached']['library'][] = 'dd_tools/flickr';
     $build['#attached']['library'][] = 'dd_tools/misc';
     return $build;
   }
