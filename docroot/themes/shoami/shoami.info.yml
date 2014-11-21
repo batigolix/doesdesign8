@@ -41,12 +41,12 @@ regions:
 
 #scripts[] = js/scripts.js
 
-settings[clear_registry] = 0
-settings[breadcrumb_display]   = yes
-settings[breadcrumb_separator] = ' › '
-settings[breadcrumb_home]      = 1
-settings[breadcrumb_trailing]  = 0
-settings[breadcrumb_title]     = 0
-settings[shoami_shim]           = 1
-
-fonts[google_fonts_api][] = "Gentium Book Basic&subset=latin#regular"
+#settings[clear_registry] = 0
+#settings[breadcrumb_display]   = yes
+#settings[breadcrumb_separator] = ' › '
+#settings[breadcrumb_home]      = 1
+#settings[breadcrumb_trailing]  = 0
+#settings[breadcrumb_title]     = 0
+#settings[shoami_shim]           = 1
+#
+#fonts[google_fonts_api][] = "Gentium Book Basic&subset=latin#regular"
