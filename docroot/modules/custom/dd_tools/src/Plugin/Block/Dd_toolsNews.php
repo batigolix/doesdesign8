@@ -58,6 +58,14 @@ class Dd_toolsNews extends BlockBase {
       '#default_value' => $this->configuration['news_items'],
     );
 
+    $form['block_count'] = array(
+      '#type' => 'select',
+      '#options' => array(2 => 2, 5 => 5, 10 => 10),
+      '#description' => t('This number of items will be shown in the news block'),
+      '#title' => t('Number of items'),
+      '#default_value' => $this->configuration['block_count'],
+    );
+
     return $form;
   }
 
@@ -92,8 +100,37 @@ class Dd_toolsNews extends BlockBase {
 //        ),
 //      );
 
+
+    $query = db_select('node', 'n')
+      ->fields('n')
+      ->addTag('node_access')
+//      ->addMetaData('base_table', 'forum_index')
+//      ->orderBy('created', 'DESC')
+      ->range(0, $this->configuration['block_count']);
+
+
+    $result = $query->execute();
+    dpm($result);
+
+    foreach($result as $row) {
+      dsm($row);
+      var_dump($row);
+    }
+
+    $elements = array();
+    if ($node_title_list = node_title_list($result)) {
+      $elements['forum_list'] = $node_title_list;
+//      $elements['forum_more'] = array(
+//        '#type' => 'more_link',
+//        '#url' => Url::fromRoute('forum.index'),
+//        '#attributes' => array('title' => $this->t('Read the latest forum topics.')),
+//      );
+    }
     $build = array();
-    $build['container']['#markup'] = '<div id="News_images"> </div>';
+    $build['elements']['#markup'] = $elements;
+    $build['elements']['#markup'] = 'sdfsdafsd';
+
+    $build['container']['#markup'] = '<div id="News_images">sdcsadvsdvsd </div>';
 //    $test = \Drupal::config('nognix.settings')->get('doh_you');
 //    $build['stuff2']['#markup'] = $this->configuration['content'];
 //    $build['#attached']['library'][] = 'dd_tools/News';
