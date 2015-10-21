@@ -1,4 +1,5 @@
 # drupal 8
+docroot
 docroot/core
 docroot/.csslintrc
 docroot/.editorconfig
