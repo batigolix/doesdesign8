@@ -1,0 +1,22 @@
+[[doesdesign8-readme]]
+
+=== Doesdeisgn 8
+
+==== Install steps
+. drush make doesdesign8.make
+. drush site-install
+
+drush @dd8.val --db-url=mysql://root:root@127.0.0.1:3306/dd8 --site-name="My Fancy Site" --account-name=admin --account-pass=pass --account-mail=admin@example.com --nocolor --root=/Users/boris/Sites/doesdesign8/docroot --yes --verbose site-install standard
+
+[start=3]
+. symlink the modules and themes
+
+. enable settings.local.php (copied from example in docroot/sites)
+
+
+boris$ ln -s /Users/boris/Sites/doesdesign8/themes /Users/boris/Sites/doesdesign8/docroot/themes/custom
+valencia:doesdesign8 boris$ ln -s /Users/boris/Sites/doesdesign8/modules /Users/boris/Sites/doesdesign8/docroot/modules/custom
+valencia:doesdesign8 boris$
+
+en moduleupgrader
+en devel
