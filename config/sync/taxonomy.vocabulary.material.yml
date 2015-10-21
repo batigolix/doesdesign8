@@ -1,0 +1,9 @@
+uuid: 76821f4c-6020-4960-a300-e44d6213db7f
+langcode: en
+status: true
+dependencies: {  }
+name: Materialen
+vid: material
+description: ''
+hierarchy: 0
+weight: 0

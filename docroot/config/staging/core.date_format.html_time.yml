@@ -1,8 +1,0 @@
-uuid: 74d4fd41-9d4e-4856-860a-10680cc059fb
-langcode: en
-status: true
-dependencies: {  }
-id: html_time
-label: 'HTML Time'
-locked: true
-pattern: 'H:i:s'

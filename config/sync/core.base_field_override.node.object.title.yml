@@ -1,0 +1,18 @@
+uuid: f01e6c9c-b5e7-48d2-a400-c5d12700bf4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.object
+id: node.object.title
+field_name: title
+entity_type: node
+bundle: object
+label: Naam
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

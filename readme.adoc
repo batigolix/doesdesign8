@@ -13,6 +13,8 @@ drush @dd8.val --db-url=mysql://root:root@127.0.0.1:3306/dd8 --site-name="My Fan
 
 . enable settings.local.php (copied from example in docroot/sites)
 
+. symlink config dir
+
 
 boris$ ln -s /Users/boris/Sites/doesdesign8/themes /Users/boris/Sites/doesdesign8/docroot/themes/custom
 valencia:doesdesign8 boris$ ln -s /Users/boris/Sites/doesdesign8/modules /Users/boris/Sites/doesdesign8/docroot/modules/custom

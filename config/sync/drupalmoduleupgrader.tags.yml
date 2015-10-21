@@ -1,0 +1,23 @@
+category:
+  block: Blocks
+  cache: Caching
+  config: Configuration
+  ctools: CTools
+  db: Database
+  entity: 'Entity API'
+  field: 'Field API'
+  form: 'Form API'
+  info: 'Info File'
+  menu: Menu/Routing
+  misc: Miscellaneous
+  node: 'Node API'
+  render: Rendering
+  system: System
+  taxonomy: Taxonomy
+  theme: 'Theme System'
+  ui: 'User Interface'
+  user: Users
+  utility: Utilities
+error_level:
+  - error
+  - warning
