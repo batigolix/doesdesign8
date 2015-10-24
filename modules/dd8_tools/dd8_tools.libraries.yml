@@ -10,3 +10,15 @@ misc:
     js/misc.js: {}
   dependencies:
     - core/jquery
+responsiveslides:
+  version: 1.x
+  js:
+    js/responsiveslides/responsiveslides.min.js: {}
+  dependencies:
+    - core/jquery
+slideshow:
+  version: 1.x
+  js:
+    js/slideshow.js: {}
+  dependencies:
+    - core/jquery

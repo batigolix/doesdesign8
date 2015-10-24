@@ -1,0 +1,9 @@
+uuid: bc1712dc-32cc-40bb-9905-5b7598fc402a
+langcode: en
+status: true
+dependencies: {  }
+name: Categorie
+vid: category
+description: ''
+hierarchy: 0
+weight: 0

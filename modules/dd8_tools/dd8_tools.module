@@ -1,5 +1,14 @@
 <?php
 
+
+//function dd8_tools_views_pre_render(ViewExecutable $view) {
+//
+////  dsm('sdvsdv');
+//
+//  // print_r($view);
+//
+//}
+
 /**
  * @file
  * Used to demonstrate the possibilities of routing in Drupal 8.

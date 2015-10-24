@@ -11,7 +11,7 @@ id: node.object.body
 field_name: body
 entity_type: node
 bundle: object
-label: Body
+label: Beschrijving
 description: ''
 required: false
 translatable: true

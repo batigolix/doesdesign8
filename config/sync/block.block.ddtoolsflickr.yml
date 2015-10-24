@@ -29,5 +29,6 @@ settings:
       - cache_context.user.roles
       - cache_context.user.roles
       - cache_context.user.roles
+      - cache_context.user.roles
   flickr_items: '18'
 visibility: {  }

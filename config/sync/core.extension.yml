@@ -13,6 +13,7 @@ module:
   dblog: 0
   dd8_tools: 0
   devel: 0
+  devel_generate: 0
   drupalmoduleupgrader: 0
   dynamic_page_cache: 0
   editor: 0
@@ -25,12 +26,16 @@ module:
   image: 0
   link: 0
   menu_ui: 0
+  migrate: 0
+  migrate_drupal: 0
+  migrate_upgrade: 0
   node: 0
   options: 0
   page_cache: 0
   path: 0
   quickedit: 0
   rdf: 0
+  responsive_image: 0
   search: 0
   shortcut: 0
   system: 0

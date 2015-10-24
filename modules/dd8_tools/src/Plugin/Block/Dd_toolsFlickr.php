@@ -16,7 +16,7 @@ use Drupal\Core\Form\FormStateInterface;
  * @Block(
  *   id = "flickr",
  *   subject = @Translation("Flickr"),
- *   admin_label = @Translation("DD tools: Flickr")
+ *   admin_label = @Translation("DD 8 tools: Flickr")
  * )
  */
 class Dd_toolsFlickr extends BlockBase {
@@ -37,15 +37,6 @@ class Dd_toolsFlickr extends BlockBase {
     );
   }
 
-
-  /**
-   * {@inheritdoc}
-   */
-//  public function defaultConfiguration() {
-//    return [
-//      'flickr_items' => 16,
-//    ];
-//  }
 
 
   /**
@@ -87,51 +78,13 @@ class Dd_toolsFlickr extends BlockBase {
   public function build() {
     $flickr_items = $this->configuration['flickr_items'];
 
-//  case 'flickr':
-//      $blocks['subject'] = t('Photo\'s on Flickr');
-//      $blocks['content'] = array(
-//        '#markup' => '<div id="flickr_images"> </div>',
-//        '#attached' => array(
-//          'js' => array(
-//            'data' => drupal_get_path('module', 'dd_tools') . '/js/flickr.js',
-//            array(
-//              'data' => array(
-//                'dd_tools' => array(
-//                  'block_items' => variable_get('flickr_items', 13),
-//                ),
-//              ),
-//              'type' => 'setting',
-//            ),
-//          ),
-//        ),
-//      );
-
     $build = array();
-    $build['wwwww']['#markup'] = 'ascasasd';
     $build['container']['#markup'] = '<div id="flickr_images">sdfsdf </div>';
 
     $build['#attached']['library'][] = 'dd8_tools/flickr';
     $build['#attached']['drupalSettings']['dd8_tools']['flickr']['flickr_items'] = $flickr_items;
-//    $build['#attached']['js'][] = array(
-//      'type' => 'inline',
-//      'data' => "var flickr_items = $flickr_items",
-//      'every_page' => TRUE,
-//    );
-
-//    $test = \Drupal::config('nognix.settings')->get('doh_you');
-//    $build['stuff2']['#markup'] = $this->configuration['content'];
-//    $build['#attached']['library'][] = 'dd_tools/flickr';
-    $build['#attached']['library'][] = 'dd_tools/misc';
     return $build;
   }
-
-  /**
-   * {@inheritdoc}
-   */
-//  public function build() {
-//    return array('#markup' => '<span>' . $this->t('Powered by <a href=":poweredby">Drupal</a>', array(':poweredby' => 'https://www.drupal.org')) . '</span>');
-//  }
-//
 
 
 }

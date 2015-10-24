@@ -1,6 +1,6 @@
 [[doesdesign8-readme]]
 
-=== Doesdeisgn 8
+=== Doesdesign 8
 
 ==== Install steps
 . drush make doesdesign8.make
@@ -15,6 +15,13 @@ drush @dd8.val --db-url=mysql://root:root@127.0.0.1:3306/dd8 --site-name="My Fan
 
 . symlink config dir
 
+. create taxonomies
+
+. create object ct
+
+. en devel generate
+
+. genc 10
 
 boris$ ln -s /Users/boris/Sites/doesdesign8/themes /Users/boris/Sites/doesdesign8/docroot/themes/custom
 valencia:doesdesign8 boris$ ln -s /Users/boris/Sites/doesdesign8/modules /Users/boris/Sites/doesdesign8/docroot/modules/custom
