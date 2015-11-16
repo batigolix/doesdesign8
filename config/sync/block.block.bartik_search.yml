@@ -1,4 +1,4 @@
-uuid: b9f9b4cc-dd78-496e-8300-b9640aa09b50
+uuid: eef5000e-38ef-4268-bf08-08199e866558
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: bartik_search
 theme: bartik
 region: sidebar_first
-weight: -7
+weight: -1
 provider: null
 plugin: search_form_block
 settings:
