@@ -44,7 +44,7 @@ api: 2
 
 projects:
   drupal:
-    version: ~8.0.0-rc1
+    version: ~8.0.0-rc3
 
   # Projects
   # --------
@@ -69,54 +69,58 @@ projects:
 
   # Or an alternative, extended syntax:
 
-  ctools:
-    version: "1.3"
+#  ctools:
+#    version: "1.3"
 
   # Check out the latest version of a project from Git. Note that when using a
   # repository as your project source, you must explicitly declare the project
   # type so that drush_make knows where to put your project.
 
-  data:
-    type: "module"
-    download:
-      type: "git" # Note, 'git' is the default, no need to specify.
-      url: "http://git.drupal.org/project/views.git"
-      revision: "7.x-3.x"
+#  data:
+#    type: "module"
+#    download:
+#      type: "git" # Note, 'git' is the default, no need to specify.
+#      url: "http://git.drupal.org/project/views.git"
+#      revision: "7.x-3.x"
 
   # For projects on drupal.org, some shorthand is available. If any
   # download parameters are specified, but not type, the default is git.
-  cck_signup:
-    download:
-      revision: "2fe932c"
+#  cck_signup:
+#    download:
+#      revision: "2fe932c"
       # It is recommended to also specify the corresponding branch so that
       # the .info file rewriting can obtain a version string that works with
       # the core update module
-      branch: "7.x-1.x"
+#      branch: "7.x-1.x"
 
   # Clone a project from github.
 
-  tao:
-    type: theme
-    download:
-      url: "git://github.com/developmentseed/tao.git"
+ # tao:
+ #   type: theme
+ #   download:
+ #     url: "git://github.com/developmentseed/tao.git"
 
   # If you want to install a module into a sub-directory, you can use the
   # `subdir` attribute.
 
-  admin_menu:
-    subdir: custom
+#  admin_menu:
+#    subdir: custom
 
   # To apply patches to a project, use the `patch` attribute and pass in the URL
   # of the patch, one per line prefaced with `- `.
 
-    patch:
-      - "http://drupal.org/files/issues/admin_menu.long_.31.patch"
+ #   patch:
+ #     - "http://drupal.org/files/issues/admin_menu.long_.31.patch"
 
 # If all projects or libraries share common attributes, the `defaults`
 # array can be used to specify these globally, rather than
 # per-project.
 
   drupalmoduleupgrader
+
+  adaptivetheme:
+    type: theme
+    version: 1.x-dev
 
 defaults:
   projects:
