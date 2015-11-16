@@ -16,7 +16,7 @@ use Drupal\Core\Url;
  * Provides a 'Example: configurable text string' block.
  *
  * @Block(
- *   id = "contact",
+ *   id = "dd_tools_contact_block",
  *   subject = @Translation("Contact"),
  *   admin_label = @Translation("DD 8 tools: Contact"),
  * )
