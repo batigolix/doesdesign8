@@ -33,21 +33,21 @@ class Dd_toolsContact extends BlockBase {
       array(
         'name' => 'Facebook',
         'img' => 'facebook-logo.png',
-        'cta' => $this-t('Visit Doesdesign at Facebook'),
+        'cta' => $this->t('Visit Doesdesign at Facebook'),
         'url' => 'https://www.facebook.com/Doesdesign.nl',
         'class' => 'facebook',
       ),
       array(
         'name' => 'Linkedin',
         'img' => 'linkedin-logo.png',
-        'cta' => $this-t('Visit Birigit at Linkedin'),
+        'cta' => $this->t('Visit Birigit at Linkedin'),
         'url' => 'http://nl.linkedin.com/in/birgitdoesborg',
         'class' => 'linkedin',
       ),
       array(
         'name' => 'Twitter',
         'img' => 'twitter-logo.png',
-        'cta' => $this-t('Tweet Birigit'),
+        'cta' => $this->t('Tweet Birigit'),
         'url' => 'http://twitter.com/#!/Doesdesign_nl',
         'class' => 'twitter',
       ),
@@ -79,7 +79,7 @@ class Dd_toolsContact extends BlockBase {
     }
     $build['doespic'] = array(
       '#theme' => 'image',
-      '#path' => $img_path . 'Doesklein.jpg',
+      '#uri' => $img_path . 'does.jpg',
       '#width' => '75',
       '#height' => '100',
       '#attributes' => array(
@@ -90,17 +90,19 @@ class Dd_toolsContact extends BlockBase {
         'alt' => 'Foto Birgit Doesborg',
       ),
     );
-//    $build['about']['#markup'] = '<div class="about"><strong>' . l('Birgit Doesborg', 'about') . '</strong>, Goud- en zilversmid.</div>';
-//    $build['contact_link']['#markup'] = '<div class="contact"><strong>' . l('Contact', 'contact') . '</strong></div>';
+    $url = Url::fromUserInput('/about');
+    $build['about']['#markup'] = '<div class="about"><strong>' . \Drupal::l('Birgit Doesborg', $url) . '</strong>, Goud- en zilversmid.</div>';
+    $url = Url::fromUserInput('/contact');
+    $build['contact_link']['#markup'] = '<div class="contact"><strong>' . \Drupal::l('Contact', $url) . '</strong></div>';
     $build['social'] = array(
       '#theme' => 'item_list',
       '#items' => $items,
       '#attributes' => array('class' => array('socialist')),
     );
 
+    $build['#attributes']['class'][] = 'dd-tools-contact-block';
 
     return $build;
-//
   }
 
 }

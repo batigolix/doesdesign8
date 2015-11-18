@@ -1,51 +1,14 @@
 <?php
 
-/**
- * Implements hook_preprocess_block() for block content.
- *
- * Adds classes to specific blocks.
- */
-function dd8_tools_preprocess_block(&$variables) {
-  switch($variables['plugin_id']){
-    case 'dd_tools_contact_block' :
-      $variables['attributes']['class'][] = 'dd-tools-contact-block';
-      break;
-    case 'dd_tools_slideshow_block' :
-      $variables['attributes']['class'][] = 'dd-tools-slideshow-block';
-      break;
-  }
-}
-
-
-//function dd8_tools_views_pre_render(ViewExecutable $view) {
+///**
+// * Implements hook_preprocess_HOOK() for block templates.
+// */
+//function dd8_tools_preprocess_block(&$variables) {
+//  dsm($variables['plugin_id']);
 //
-////  dsm('sdvsdv');
-//
-//  // print_r($view);
-//
+//  switch($variables['plugin_id']) {
+//    case 'local_tasks_block':
+//      $variables['attributes']['class'][] = 'action-tabs';
+//      break;
+//  }
 //}
-
-/**
- * @file
- * Used to demonstrate the possibilities of routing in Drupal 8.
- */
-
-/**
- * Implements hook_libraries_info()
- * @return array
- */
-
-//function nognix_libraries_info() {
-//  $libraries['responsiveslides'] = array(
-//    'name' => 'Responsive Slides',
-//    'vendor url' => 'http://responsiveslides.com/',
-//    'download url' => 'https://github.com/viljamis/ResponsiveSlides.js',
-//    'version' => '1.54',
-//    'files' => array(
-//      'js' => array('responsiveslides.min.js'),
-////        'css' => array('css/mylibrary.css'),
-//    ),
-//  );
-//  return $libraries;
-//}
-

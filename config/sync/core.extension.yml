@@ -18,12 +18,14 @@ module:
   dynamic_page_cache: 0
   editor: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
   help: 0
   history: 0
   image: 0
+  kint: 0
   link: 0
   menu_ui: 0
   migrate: 0
