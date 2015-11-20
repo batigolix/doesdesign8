@@ -8,12 +8,16 @@
 namespace Drupal\dd8_tools\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Cache\Cache;
+use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Form\FormStateInterface;
+
+//use Drupal\Core\Cache\Cache;
+//use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityViewBuilder;
 use Drupal\Core\Entity\Entity;
 use Drupal\Core\Entity\Annotation\EntityType;
-use Drupal\Core\Annotation\Translation;
+
+//use Drupal\Core\Annotation\Translation;
 //use Drupal\my_module\MyEntityInterface;
 
 /**
@@ -33,30 +37,124 @@ class Dd_toolsSlideshow extends BlockBase {
    */
   public function build() {
 
+    $config = $this->getConfiguration();
+    $nr_items = isset($config['slideshow_items']) ? $config['slideshow_items'] : 3;
+    $order = isset($config['slideshow_order']) ? $config['slideshow_order'] : 'created';
 
-        $query = \Drupal::entityQuery('node')
+    // Fetches the slideshow nodes.
+    $query = \Drupal::entityQuery('node')
       ->condition('status', 1)
-      ->condition('type', 'object');
-//      ->condition('changed', REQUEST_TIME, '<')
-//      ->condition('title', 'cat', 'CONTAINS')
-//      ->condition('field_tags.entity.name', 'cats');
-
+      ->condition('type', 'object')
+      ->sort($order)
+      ->range(0, $nr_items);
     $nids = $query->execute();
-dd('hola');
-    dd($nids);
-dsm('asadsa');
-    $nodes = \Drupal::entityManager()->getStorage('node')->loadMultiple($nids);
+    $items = array();
+    foreach ($nids as $nid) {
+      $node = entity_load('node', $nid);
+      $node_view = entity_view($node, 'hero_teaser');
+      $items[] = array(
+        '#markup' => drupal_render($node_view),
+        '#wrapper_attributes' => array('class' => array('slide')),
+      );
+    }
+    $build['show'] = array(
+      '#theme' => 'item_list',
+      '#items' => $items,
+      '#attributes' => array('class' => array('slideshow', 'rslides')),
+    );
+    $build['#attributes']['class'][] = 'slideshow-block';
+    $build['#attached']['library'][] = 'dd8_tools/slideshow';
+    $build['#attached']['library'][] = 'dd8_tools/responsiveslides';
+    return $build;
+
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public
+  function blockForm($form, FormStateInterface $form_state) {
+    $form = parent::blockForm($form, $form_state);
+
+    // Retrieve existing configuration for this block.
+    $config = $this->getConfiguration();
+
+    // Add a form field to the existing block configuration form.
+    $form['slideshow_items'] = array(
+      '#type' => 'select',
+      '#title' => t('Number of items'),
+      '#options' => array(
+        3 => 3,
+        5 => 5,
+        7 => 7,
+        9 => 9,
+        11 => 11,
+        13 => 13,
+        15 => 15,
+        17 => 17,
+      ),
+      '#description' => t('Number of items that will be shown in the slideshow.'),
+      '#default_value' => isset($config['slideshow_items']) ? $config['slideshow_items'] : '',
+    );
+    $form['slideshow_order'] = array(
+      '#type' => 'select',
+      '#title' => t('Order by'),
+      '#options' => array(
+        'created ' => t('Creation date'),
+        'changed' => t('Date of last change')
+      ),
+      '#description' => t('By which date the items will be ordered in the slideshow block'),
+      '#default_value' => isset($config['slideshow_order']) ? $config['slideshow_order'] : '',
+    );
+    return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public
+  function blockSubmit($form, FormStateInterface $form_state) {
+    // Save our custom settings when the form is submitted.
+    $this->setConfigurationValue('slideshow_items', $form_state->getValue('slideshow_items'));
+    $this->setConfigurationValue('slideshow_order', $form_state->getValue('slideshow_order'));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public
+  function blockValidate($form, FormStateInterface $form_state) {
+    $slideshow_items = $form_state->getValue('slideshow_items');
+
+    if (!is_numeric($slideshow_items)) {
+      $form_state->setErrorByName('slideshow_items', t('Needs to be an interger'));
+    }
+  }
+
+  //
+  // $nodes = \Drupal::entityManager()->getStorage('node')->loadMultiple($nids);
 // Or a use the static loadMultiple method on the entity class:
 //    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
 //dd($nodes);
-    // And then you can view/build them all together:
-    $build['sdvsdv']['#markup'] = '<span>' . $this->t('Powered by <a href=":poweredby">Drupal</a>', array(':poweredby' => 'https://www.drupal.org')) . '</span>';
+// And then you can view/build them all together:
+//    $build['sdcsdcs'] = \Drupal::entityManager()->viewMultiple($nodes, 'teaser');
 
-    $build['nodes'] = \Drupal::entityManager()->viewMultiple($nodes, 'hero_teaser');
 
-    return $build;
+//    $render_controller = \Drupal::entityManager()->getViewBuilder($entity->getEntityTypeId());
+//    $render_output = $render_controller->view($entity, $view_mode, $langcode);
+
+
+//dsm('asadsa');
+//    $nodes = \Drupal::entityManager()->getStorage('node')->loadMultiple($nids);
+//// Or a use the static loadMultiple method on the entity class:
+////    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+////dd($nodes);
+//    // And then you can view/build them all together:
+//    $build['sdvsdv']['#markup'] = '<span>' . $this->t('Powered by <a href=":poweredby">Drupal</a>', array(':poweredby' => 'https://www.drupal.org')) . '</span>';
 //
-  }
+//    $build['nodes'] = \Drupal::entityManager()->viewMultiple($nodes, 'hero_teaser');
+
+//
 
 }
 //
@@ -76,28 +174,6 @@ dsm('asadsa');
 //    );
 //  }
 //
-//  /**
-//   * Overrides \Drupal\Core\Block\BlockBase::blockForm().
-//   */
-//  public function blockForm($form, FormStateInterface $form_state) {
-////    $config = $this->configuration;
-//////    $defaults = $this->defaultConfiguration();
-////    $form['slideshow_items'] = array(
-////      '#type' => 'select',
-////      '#title' => t('Number of items in slideshow'),
-////      '#options' => array(
-////        3 => 3,
-////        5 => 5,
-////        7 => 7,
-////        9 => 9,
-////        11 => 11,
-////        13 => 13,
-////        15 => 15,
-////        17 => 17,
-////      ),
-////      '#description' => t('This number of items will be shown in the slideshow block'),
-////      '#default_value' => $config['slideshow_items'],
-////    );
 ////    $form['slideshow_order'] = array(
 ////      '#type' => 'select',
 ////      '#title' => t('Order'),

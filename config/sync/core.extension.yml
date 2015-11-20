@@ -54,7 +54,6 @@ module:
 theme:
   classy: 0
   seven: 0
-  at_core: 0
   shakudo: 0
   stable: 0
   shoami: 0
