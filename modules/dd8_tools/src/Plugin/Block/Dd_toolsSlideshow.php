@@ -67,7 +67,7 @@ class Dd_toolsSlideshow extends BlockBase {
     $build['#attached']['library'][] = 'dd8_tools/responsiveslides';
 
 
-    $build['asfasf']['#markup'] = 'efkjqekjfkjah aekjkjwevkj HSHAJHDJAH';
+//    $build['asfasf']['#markup'] = 'efkjqekjfkjah aekjkjwevkj HSHAJHDJAH';
 
     return $build;
 

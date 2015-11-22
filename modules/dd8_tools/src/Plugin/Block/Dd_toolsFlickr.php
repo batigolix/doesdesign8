@@ -8,6 +8,7 @@
 namespace Drupal\dd8_tools\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -24,7 +25,7 @@ class Dd_toolsFlickr extends BlockBase {
   /**
    * Overrides \Drupal\Core\Block\BlockBase::defaultConfiguration().
    */
-  public function defaultConfiguration() {
+//  public function defaultConfiguration() {
 //    return array(
 //      'label' => t("Photo's on Flickr"),
 //      'content' => t('Default demo content'),
@@ -35,7 +36,7 @@ class Dd_toolsFlickr extends BlockBase {
 //        ),
 //      ),
 //    );
-  }
+//  }
 
 
 
@@ -43,6 +44,28 @@ class Dd_toolsFlickr extends BlockBase {
    * Overrides \Drupal\Core\Block\BlockBase::blockForm().
    */
   public function blockForm($form, FormStateInterface $form_state) {
+
+    $form = parent::blockForm($form, $form_state);
+
+    // Retrieve existing configuration for this block.
+    $config = $this->getConfiguration();
+
+    // Add a form field to the existing block configuration form.
+    $form['flickr_items'] = array(
+      '#type' => 'select',
+      '#title' => t('Number of items'),
+      '#options' => array(
+        10 => 10,
+        12 => 12,
+        15 => 15,
+        16 => 16,
+        18 => 18,
+        20 => 20
+      ),
+      '#description' => t('Number of items that will be shown in the slideshow.'),
+      '#default_value' => isset($config['flickr_items']) ? $config['flickr_items'] : '',
+    );
+
 //    $config = $this->configuration;
 //    $defaults = $this->defaultConfiguration();
 //    $form['flickr_items'] = array(
@@ -60,7 +83,7 @@ class Dd_toolsFlickr extends BlockBase {
 //      '#default_value' => $config['flickr_items'],
 //    );
 //
-//    return $form;
+    return $form;
   }
 
 
@@ -69,6 +92,8 @@ class Dd_toolsFlickr extends BlockBase {
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
 //    $this->configuration['flickr_items'] = $form_state->getValue('flickr_items');
+    $this->setConfigurationValue('flickr_items', $form_state->getValue('flickr_items'));
+//    $this->setConfigurationValue('slideshow_order', $form_state->getValue('slideshow_order'));
   }
 
 
@@ -76,13 +101,13 @@ class Dd_toolsFlickr extends BlockBase {
    * Implements \Drupal\Core\Block\BlockBase::blockBuild().
    */
   public function build() {
-//    $flickr_items = $this->configuration['flickr_items'];
-//
-//    $build = array();
-//    $build['container']['#markup'] = '<div id="flickr_images">sdfsdf </div>';
-//
-//    $build['#attached']['library'][] = 'dd8_tools/flickr';
-//    $build['#attached']['drupalSettings']['dd8_tools']['flickr']['flickr_items'] = $flickr_items;
+    $config = $this->getConfiguration();
+    $flickr_items = isset($config['flickr_items']) ? $config['flickr_items'] : 12;
+    $build = array();
+    $build['container']['#markup'] = '<div id="flickr_images"></div>';
+    $build['#attached']['library'][] = 'dd8_tools/flickr';
+    $build['#attached']['drupalSettings']['dd8_tools']['flickr']['flickr_items'] = $flickr_items;
+    $build['#attributes']['class'][] = 'dd-tools-flickr';
     return $build;
   }
 

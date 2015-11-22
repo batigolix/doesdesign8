@@ -303,16 +303,41 @@ footer {
 }
 
 .layout-content {
-  @include span-columns(6);
+  @include span-columns(7);
   @include media($tablet) {
     @include span-columns(10 of 10);
   }
 }
 
 .layout-sidebar-second {
-  @include span-columns(4);
+  @include span-columns(3);
   @include media($tablet) {
     @include span-columns(10 of 10);
   }
 }
 
+.dd-tools-flickr {
+  padding: 0px;
+  margin: 0px;
+  ul {
+    float: left;
+    padding: 10px 0px;
+    margin: 0px;
+    li {
+      display: inline;
+      list-style: none;
+      img {
+        border: none;
+        padding: 0 5px 5px 0;
+        width: 88px;
+        height: 88px;
+        opacity: 0.6;
+        -moz-opacity: 0.6;
+        &:hover {
+          opacity: 1;
+          -moz-opacity: 1;
+        }
+      }
+    }
+  }
+}
