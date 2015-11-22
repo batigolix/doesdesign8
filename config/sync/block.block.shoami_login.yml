@@ -1,0 +1,20 @@
+uuid: 104459f1-6f8a-4594-9f0d-1350edfca569
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - shoami
+id: shoami_login
+theme: shoami
+region: sidebar_second
+weight: 20
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

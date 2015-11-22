@@ -1,0 +1,28 @@
+uuid: 4317db6c-d7bc-4a2a-a521-3367573357eb
+langcode: en
+status: true
+dependencies:
+  module:
+    - dd8_tools
+    - system
+  theme:
+    - shakudo
+id: dd8toolsslideshow
+theme: shakudo
+region: content
+weight: -8
+provider: null
+plugin: slideshow
+settings:
+  id: slideshow
+  label: 'DD 8 tools: Slideshow'
+  provider: dd8_tools
+  label_display: '0'
+  slideshow_items: '3'
+  slideshow_order: 'created '
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

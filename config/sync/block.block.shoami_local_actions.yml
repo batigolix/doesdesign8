@@ -1,0 +1,18 @@
+uuid: 35e9c604-f3d8-4b20-a409-097ff7a3645d
+langcode: en
+status: true
+dependencies:
+  theme:
+    - shoami
+id: shoami_local_actions
+theme: shoami
+region: content
+weight: 3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

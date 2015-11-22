@@ -1,0 +1,20 @@
+uuid: c4955065-3be7-40f6-9c00-e22dade50d3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - stable
+id: stable_login
+theme: stable
+region: sidebar_second
+weight: 20
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

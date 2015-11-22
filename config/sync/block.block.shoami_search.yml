@@ -1,0 +1,20 @@
+uuid: 86c87b72-e9b0-4ffb-af00-0dcae3338992
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - shoami
+id: shoami_search
+theme: shoami
+region: sidebar_second
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

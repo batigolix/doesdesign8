@@ -1,0 +1,24 @@
+uuid: 1f4da091-56fd-4229-9343-67afbfea5d36
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - shoami
+id: shoami_main_menu
+theme: shoami
+region: help
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

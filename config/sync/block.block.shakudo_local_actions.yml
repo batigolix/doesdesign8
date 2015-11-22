@@ -1,0 +1,18 @@
+uuid: 4c918fd0-2e52-43e0-9700-be011d44bf68
+langcode: en
+status: false
+dependencies:
+  theme:
+    - shakudo
+id: shakudo_local_actions
+theme: shakudo
+region: '-1'
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

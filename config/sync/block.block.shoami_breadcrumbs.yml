@@ -1,0 +1,25 @@
+uuid: c8067e54-7d34-4791-9500-d536a3b82494
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - shoami
+id: shoami_breadcrumbs
+theme: shoami
+region: help
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

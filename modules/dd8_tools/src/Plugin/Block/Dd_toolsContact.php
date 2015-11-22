@@ -78,23 +78,31 @@ class Dd_toolsContact extends BlockBase {
       $items[] = \Drupal::l($img, $url);
     }
     $build['doespic'] = array(
+      '#prefix' => '<div class="doespic">',
+      '#suffix' => '</div>',
       '#theme' => 'image',
       '#uri' => $img_path . 'does.jpg',
       '#width' => '75',
       '#height' => '100',
       '#attributes' => array(
-        'class' => array(
-          'doespic'
-        ),
+//        'class' => array(
+//          'doespic'
+//        ),
         'title' => 'Birgit Doesborg',
         'alt' => 'Foto Birgit Doesborg',
       ),
     );
+    $build['doestxt'] = array(
+      '#prefix' => '<div class="doestxt">',
+      '#suffix' => '</div>',
+    );
+
+
     $url = Url::fromUserInput('/about');
-    $build['about']['#markup'] = '<div class="about"><strong>' . \Drupal::l('Birgit Doesborg', $url) . '</strong>, Goud- en zilversmid.</div>';
+    $build['doestxt']['about']['#markup'] = '<div class="about"><strong>' . \Drupal::l('Birgit Doesborg', $url) . '</strong>, Goud- en zilversmid.</div>';
     $url = Url::fromUserInput('/contact');
-    $build['contact_link']['#markup'] = '<div class="contact"><strong>' . \Drupal::l('Contact', $url) . '</strong></div>';
-    $build['social'] = array(
+    $build['doestxt']['contact_link']['#markup'] = '<div class="contact"><strong>' . \Drupal::l('Contact', $url) . '</strong></div>';
+    $build['doestxt']['social'] = array(
       '#theme' => 'item_list',
       '#items' => $items,
       '#attributes' => array('class' => array('socialist')),

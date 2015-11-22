@@ -1,0 +1,20 @@
+uuid: 357e477e-b6ee-4ccb-a608-8da2b418bee3
+langcode: en
+status: true
+dependencies:
+  module:
+    - dd8_tools
+  theme:
+    - shakudo
+id: dd8toolscontact_2
+theme: shakudo
+region: header
+weight: -6
+provider: null
+plugin: dd_tools_contact_block
+settings:
+  id: dd_tools_contact_block
+  label: 'DD 8 tools: Contact'
+  provider: dd8_tools
+  label_display: '0'
+visibility: {  }

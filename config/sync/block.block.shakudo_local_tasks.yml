@@ -1,0 +1,20 @@
+uuid: 3666d273-925c-420e-a15a-90756f0dbee4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - shakudo
+id: shakudo_local_tasks
+theme: shakudo
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

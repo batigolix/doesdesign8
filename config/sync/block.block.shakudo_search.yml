@@ -1,0 +1,20 @@
+uuid: 50e835f8-edbc-4b80-bb43-6721b01b922d
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - shakudo
+id: shakudo_search
+theme: shakudo
+region: sidebar_second
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

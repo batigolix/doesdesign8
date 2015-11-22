@@ -1,0 +1,20 @@
+uuid: 6be29a01-bf27-4dab-b400-faf10f7cd275
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - shoami
+id: shoami_help
+theme: shoami
+region: content
+weight: 2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

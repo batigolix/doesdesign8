@@ -1,0 +1,20 @@
+uuid: 24cb1ddf-b800-4c37-aa00-fb2a02d8caa5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - shoami
+id: shoami_content
+theme: shoami
+region: content
+weight: 4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

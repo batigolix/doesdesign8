@@ -39,13 +39,13 @@ class Dd_toolsSlideshow extends BlockBase {
 
     $config = $this->getConfiguration();
     $nr_items = isset($config['slideshow_items']) ? $config['slideshow_items'] : 3;
-    $order = isset($config['slideshow_order']) ? $config['slideshow_order'] : 'created';
+//    $order = isset($config['slideshow_order']) ? $config['slideshow_order'] : 'created';
 
     // Fetches the slideshow nodes.
     $query = \Drupal::entityQuery('node')
       ->condition('status', 1)
       ->condition('type', 'object')
-      ->sort($order)
+ //     ->sort($order)
       ->range(0, $nr_items);
     $nids = $query->execute();
     $items = array();
@@ -65,6 +65,10 @@ class Dd_toolsSlideshow extends BlockBase {
     $build['#attributes']['class'][] = 'slideshow-block';
     $build['#attached']['library'][] = 'dd8_tools/slideshow';
     $build['#attached']['library'][] = 'dd8_tools/responsiveslides';
+
+
+    $build['asfasf']['#markup'] = 'efkjqekjfkjah aekjkjwevkj HSHAJHDJAH';
+
     return $build;
 
   }

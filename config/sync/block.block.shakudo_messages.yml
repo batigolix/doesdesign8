@@ -1,0 +1,20 @@
+uuid: 2afb58a1-9e7e-47ab-9224-364017f2422b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - shakudo
+id: shakudo_messages
+theme: shakudo
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

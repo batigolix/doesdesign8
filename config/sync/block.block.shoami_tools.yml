@@ -1,0 +1,24 @@
+uuid: 1b83c858-fd3e-464b-8f00-f15cb461b6bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - shoami
+id: shoami_tools
+theme: shoami
+region: sidebar_second
+weight: 10
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 8a707d0b-a947-4502-841d-296d55723472
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - shakudo
+id: shakudo_content
+theme: shakudo
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

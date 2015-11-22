@@ -1,0 +1,25 @@
+uuid: 16f20ef5-94ca-419e-972d-4509f02575d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - shakudo
+id: shakudo_page_title
+theme: shakudo
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
